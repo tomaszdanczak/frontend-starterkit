@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config.pages");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -29,6 +30,9 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "css/index.css",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "public/images", to: "images" }],
     }),
   ],
 });
