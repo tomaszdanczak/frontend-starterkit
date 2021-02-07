@@ -1,6 +1,29 @@
-body {
-  min-height: 100vh;
-  background-color: royalblue;
-  background-image: url("../images/example-2.png");
-  font-family: sans-serif;
-}
+// 7-1 CSS Architecture
+
+// abstracts
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// vendors
+@import "vendors/fonts";
+@import "vendors/normalize";
+
+// base
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+// components
+@import "components/example";
+
+// layout
+@import "layout/content";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/sidebar";
+
+// pages
+
+// themes
