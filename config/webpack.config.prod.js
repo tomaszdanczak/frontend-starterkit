@@ -8,7 +8,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   output: {
-    filename: "js/[name].js",
+    filename: "js/[name]-[contenthash:8].js",
     path: path.resolve(__dirname, "../", "dist"),
   },
   devServer: {
@@ -29,7 +29,7 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/index.css",
+      filename: "css/[name]-[contenthash:8].css",
     }),
     new CopyPlugin({
       patterns: [{ from: "public/images", to: "images" }],
