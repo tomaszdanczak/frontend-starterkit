@@ -11,6 +11,13 @@ module.exports = {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../", "dist"),
   },
+  module: {
+    rules: [
+      {
+        test: /\.(sass|scss)$/,
+      },
+    ],
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
