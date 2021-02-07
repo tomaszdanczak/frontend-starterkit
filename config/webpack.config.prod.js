@@ -5,7 +5,7 @@ const common = require("./webpack.config.pages");
 
 module.exports = merge(common, {
   devtool: "source-map",
-  mode: "development",
+  mode: "production",
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../", "dist"),
