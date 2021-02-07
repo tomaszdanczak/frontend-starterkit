@@ -22,7 +22,11 @@ module.exports = merge(common, {
       },
       {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
-        use: "file-loader",
+        loader: "file-loader",
+        options: {
+          name: "[name]-[contenthash:6].[ext]",
+          outputPath: "images",
+        },
       },
     ],
   },
