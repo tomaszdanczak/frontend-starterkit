@@ -4,7 +4,6 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.config.pages");
 
 module.exports = merge(common, {
-  devtool: "source-map",
   mode: "production",
   output: {
     filename: "js/[name].js",
@@ -17,21 +16,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sass|scss)$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(jpg|png|svg|gif|jpeg)$/,
