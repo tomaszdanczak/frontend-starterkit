@@ -4,6 +4,7 @@
   "description": "webpack, HTML and SASS configuration",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config ./config/webpack.config.js",
     "dev": "webpack --config ./config/webpack.config.js",
     "prod": "webpack --config ./config/webpack.config.prod.js"
   },
@@ -26,7 +27,16 @@
   },
   "homepage": "https://github.com/tomaszdanczak/frontend-starterkit#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
   }
 }
