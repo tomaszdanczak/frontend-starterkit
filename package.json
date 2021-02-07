@@ -1,0 +1,46 @@
+{
+  "name": "frontend-starterkit",
+  "version": "1.0.0",
+  "description": "webpack, HTML and SASS configuration",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./config/webpack.config.js",
+    "dev": "webpack --config ./config/webpack.config.js",
+    "prod": "webpack --config ./config/webpack.config.prod.js",
+    "publish": "npm run prod && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszdanczak/frontend-starterkit.git"
+  },
+  "keywords": [
+    "webpack",
+    "html",
+    "sass",
+    "7-1",
+    "CSS",
+    "Architecture"
+  ],
+  "author": "Tomasz Dańczak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomaszdanczak/frontend-starterkit/issues"
+  },
+  "homepage": "https://github.com/tomaszdanczak/frontend-starterkit#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^3.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.3.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
+  }
+}
