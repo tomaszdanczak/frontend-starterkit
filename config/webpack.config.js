@@ -12,6 +12,9 @@ module.exports = {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../", "dist"),
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, "../", "public"),
+  },
   module: {
     rules: [
       {
@@ -31,6 +34,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(jpg|png|svg|gif|jpeg)$/,
+        use: "file-loader",
       },
     ],
   },
