@@ -1,4 +1,4 @@
-import photo from "../images/webpack.jpg";
+import photo from "../images/example-2.png";
 
 export default (tag) => {
   const img = document.createElement("img");
