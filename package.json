@@ -4,6 +4,7 @@
   "description": "webpack, HTML and SASS configuration",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config ./config/webpack.config.js",
     "dev": "webpack --config ./config/webpack.config.js",
     "prod": "webpack --config ./config/webpack.config.prod.js"
   },
