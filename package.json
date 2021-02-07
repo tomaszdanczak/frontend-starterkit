@@ -1,0 +1,27 @@
+{
+  "name": "frontend-starterkit",
+  "version": "1.0.0",
+  "description": "webpack, HTML and SASS configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszdanczak/frontend-starterkit.git"
+  },
+  "keywords": [
+    "webpack",
+    "html",
+    "sass",
+    "7-1",
+    "CSS",
+    "Architecture"
+  ],
+  "author": "Tomasz Dańczak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomaszdanczak/frontend-starterkit/issues"
+  },
+  "homepage": "https://github.com/tomaszdanczak/frontend-starterkit#readme"
+}
