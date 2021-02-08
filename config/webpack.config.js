@@ -12,6 +12,7 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "../", "public"),
+    open: true,
   },
   module: {
     rules: [
