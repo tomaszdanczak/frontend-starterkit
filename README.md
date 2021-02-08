@@ -7,8 +7,8 @@ Projekt jest gotową konfiguracją Webpacka. Dołączyłem do projektu także st
 Innym z aspektów działania Webpacka jest to, że podobnie jak task runnery umożliwia wykonywanie zautomatyzowanych działań na plikach. Pomaga on przy automatyzacji zadań takich jak na przykład:
 
 - może kompilować pliki SASS na CSS,
-- automatycznie przeładowywać strony w przeglądarce,
-- mimifikować czy uglifikować pliki Javascript i CSS,
+- automatycznie przeładowuje strony w przeglądarce,
+- mimifikuje czy uglifikuje pliki Javascript i CSS,
 - i wiele innych.
 
 Webpack jest bardzo pomocnym narzędziem przy budowaniu projektów, ale jego skonfigurowanie nie jest łatwe. Nie trzeba jednak samemu konfigurować Webpacka, żeby móc korzystać z tego co oferuje. Można wykorzystać gotowe konfiguracje jak ta. Jednak nawet wykorzystując gotowe konfiguracje także trzeba wiedzieć jak z nich korzystać, dlatego poniżej umieściłem opis jak pracować z tą konfiguracją.
@@ -85,7 +85,9 @@ Po wybraniu trybu należy uruchomić terminal w edytorze (CTRL + backtick). A na
 npm run start
 ```
 
-Powyższa komenda spowoduje uruchomienie serwera deweloperskiego. Każda zmiana w projekcie zostanie odzwierciedlona na stronie w dowolnej przeglądarce internetowej po otworzeniu adresu [localhost:8080](http://localhost:8080/).
+Powyższa komenda spowoduje uruchomienie serwera deweloperskiego. Dla komendy `npm run start` można użyć skróconej wersji `npm start`. Każda zmiana w projekcie zostanie odzwierciedlona na stronie w dowolnej przeglądarce internetowej po otworzeniu adresu [localhost:8080](http://localhost:8080/).  
+
+![npmstart](gh/npmstart.gif)
 
 ## 4. Praca z projektem
 
