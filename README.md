@@ -4,16 +4,16 @@ Projekt jest gotową konfiguracją Webpacka. Dołączyłem do projektu także st
 
 [Webpack](https://webpack.js.org/) jest w tej chwili podstawowym narzędziem frontendowca. Jest tzw. “module bundlerem”. Zapewnia możliwość tworzenia projektu w sposób modułowy, za pomocą modułów CommonJS czy ES6 Modules. Webpack zajmie się przetłumaczeniem naszego kodu na kod zrozumiały przez przeglądarki. Zajmie się on także spakowaniem plików tak, żebyśmy wynikowo mieli tylko kilka plików statycznych, co z kolei pozwoli na szybsze ładowanie się stron.
 
-Innym z aspektów działania Webpacka jest to, że podobnie jak task runnery umożliwia wykonywanie zautomatyzowanych działań na plikach. Pomaga on przy automatyzacji zadań takich jak na przykład:
+Innym z aspektów działania Webpacka jest to, że podobnie jak task runnery umożliwia wykonywanie zautomatyzowanych działań na plikach. Pomaga on przy automatyzacji zadań takich jak:
 
-- może kompilować pliki SASS na CSS,
+- kompiluje pliki SASS na CSS,
 - automatycznie przeładowuje strony w przeglądarce,
 - mimifikuje czy uglifikuje pliki Javascript i CSS,
 - i wiele innych.
 
-Webpack jest bardzo pomocnym narzędziem przy budowaniu projektów, ale jego skonfigurowanie nie jest łatwe. Nie trzeba jednak samemu konfigurować Webpacka, żeby móc korzystać z tego co oferuje. Można wykorzystać gotowe konfiguracje jak ta. Jednak nawet wykorzystując gotowe konfiguracje także trzeba wiedzieć jak z nich korzystać, dlatego poniżej umieściłem opis jak pracować z tą konfiguracją.
+Webpack jest bardzo pomocnym narzędziem przy budowaniu projektów, ale jego skonfigurowanie nie jest łatwe. Nie trzeba jednak samemu konfigurować Webpacka, żeby móc korzystać z tego co oferuje. Można wykorzystać gotowe konfiguracje takie jak ta. Jednak nawet wykorzystując gotowe konfiguracje także trzeba wiedzieć jak z nich korzystać, dlatego poniżej umieściłem opis jak pracować z tą konfiguracją.
 
-[7-1 CSS Architecture](https://sass-guidelin.es/) jest to sposób układanie struktury projektu wykorzystującego SCSS zaproponowany przez [Hugo “Kitty” Giraudel](https://hugogiraudel.com/). Architektura pomaga zapanować nad kodem CSS w projekcie.
+[7-1 CSS Architecture](https://sass-guidelin.es/) jest to sposób układania struktury projektu wykorzystującego SCSS zaproponowany przez [Hugo “Kitty” Giraudel](https://hugogiraudel.com/). Architektura pomaga zapanować nad kodem CSS w projekcie.
 Wraz ze zwiększaniem się rozmiaru projektu użycie 7-1 CSS Architecture daje coraz wieksze korzyści.
 
 ## 1. O projekcie
@@ -27,7 +27,7 @@ Wraz ze zwiększaniem się rozmiaru projektu użycie 7-1 CSS Architecture daje c
 - **Publikację projektu na GitHubie** - można opublikować projekt za pomocą jednej komendy (`npm run publish`).
 - **Tworzenie wersji produkcyjnej** - utworzenie wersji do umieszczenia na serwerze.
 - **Hashing** - zmienienie zawartości plików CSS lub JavaScript skutkuje wygenerowaniem plików wyjściowych z nowymi nazwami w celu zapewnienia prawidłowego ich pobierania przez przeglądarki. Jako, że mamy pliki ze zmieniającymi się nazwami Webpack musi zadbać o prawidłowe ich dołączenie do strony i to robi.
-- **Generowanie plików HTML** - zyskujemy dzięki temu automatyczne generowanie plików HTML, z prawidłowym podpięcie do nich plików CSS. Możemy także wybierać jakie pliki JavaScript będą dołączane do jakich stron.
+- **Generowanie plików HTML** - zyskujemy dzięki temu automatyczne generowanie plików HTML, z prawidłowym podpięciem do nich plików CSS. Możemy także wybierać jakie pliki JavaScript będą dołączane do jakich stron.
 - **Plik webpack.config.pages.js** - wydzieliłem plik konfiguracyjny w którym należy przeprowadzić konfigurację nowych stron od reszty konfiguracji.
 
 ## 2. Tworzenie własnego projektu korzystającego ze Starterkita
@@ -54,7 +54,7 @@ Po utworzeniu własnego projektu trzeba skopiować link do projektu (kliknąć *
 
 Należy uruchomić wiersz poleceń na Windows lub Terminal na Mac i przejść do lokalizacji, gdzie chcemy skopiować projekt.
 
-- `ls` - wyświetlenie zawartości lokalizacj i w której obecnie się znajdujemy
+- `ls` - wyświetlenie zawartości lokalizacji w której obecnie się znajdujemy
 - `cd` - wejście do katalogu
 - `cd ..` - wyjście katalog wyżej
 
@@ -95,7 +95,7 @@ Powyższa komenda spowoduje uruchomienie serwera deweloperskiego. Dla komendy `n
 
 #### 4.1.1 Plik index.html
 
-Plik index.html w którym powinien być umieszczony kod strony głównej znajduje się w katalogu page. Dla komendy `npm run start` można użyć skróconej nazwy `npm start`. Jest to tak na prawdę plik szablonowy, który będzie użyty do wygenerowania docelowego pliku index.html. Zostaną do niego automatycznie dołączone pliki CSS i JavaScript (nie dodajemy w tym pliku odwołań do plików CSS i JavaScript).
+Plik index.html w którym powinien być umieszczony kod strony głównej znajduje się w katalogu page. Jest to tak naprawdę plik szablonowy, który będzie użyty do wygenerowania docelowego pliku index.html. Zostaną do niego automatycznie dołączone pliki CSS i JavaScript (nie dodajemy w tym pliku odwołań do plików CSS i JavaScript).
 
 ![indexhtml](gh/indexhtml.png)
 
@@ -107,7 +107,7 @@ Plik index.js jest plikiem wejściowym dla Webpacka. Na jego podstawie Webpack b
 
 ![indexjs](gh/indexjs.png)
 
-Import pliku index.scss w linijce numer 1 jest dziwnie wyglądającym importem (importowany jest plik SCSS w pliku JavaScript). Taki import jest możliwy dzięki loaderowi dodanemu do konfiguracji. W tej linijce chodzi tak na prawdę o to, żeby dodać plik SCSS do drzewa zależności (obsłużeniem importu zaimie się konfiguracja Webpacka). Ta linijka jest konieczna do prawidłowego dołączenia styli CSS do projektu.
+Import pliku index.scss w linijce numer 1 jest dziwnie wyglądającym importem (importowany jest plik SCSS w pliku JavaScript). Taki import jest możliwy dzięki loaderowi dodanemu do konfiguracji. W tej linijce chodzi tak naprawdę o to, żeby dodać plik SCSS do drzewa zależności (obsłużeniem importu zajmie się konfiguracja Webpacka). Ta linijka jest konieczna do prawidłowego dołączenia styli CSS do projektu.
 Plik index.scss zawiera w sobie importy plików cząstkowych SCSS (to ten plik trzeba edytować jeżeli chce się dodać pliki cząstkowe).
 
 Import plików JavaSript jest standardowym importem plików JavaScript według ES6 Modules. W przykładzie przedstawionym na powyższym screenie do pliku index.js są importowane funkcje navigation (z pliku navigation.js) oraz glide (z pliku glide.js). Po zaimportowaniu funkcji są one wywoływane. Dzięki Webpackowi na podstawie plików navigation.js oraz glide.js zostanie utworzony jeden plik index.js, który będzie automatycznie dołączony do strony.
@@ -134,13 +134,13 @@ Podstronę należy umieścić w katalogu pages (jak na poniższym screenie).
 
 #### 4.2.2 Konfiguracja Webpacka dla nowych stron
 
-Żeby ułatwienić edycji konfiguracji Webpacka został wydzielony plik webpack.config.pages.js w którym znajduje się tylko konfiguracja odpowiedzialna za dodawanie stron do projektu oraz podpinanie do nich plików JavaScript i CSS. Pozostała konfiguracja Webpacka znajduje się w plikach webpack.config.js oraz webpack.config.prod.js.
+Żeby ułatwić edycje konfiguracji Webpacka został wydzielony plik webpack.config.pages.js w którym znajduje się tylko konfiguracja odpowiedzialna za dodawanie stron do projektu oraz podpinanie do nich plików JavaScript i CSS. Pozostała konfiguracja Webpacka znajduje się w plikach webpack.config.js oraz webpack.config.prod.js.
 
 > ❗️ Należy pamiętać, że po każdej edycji plików konfiguracyjnych należy zatrzymać Webpack (CTRL + C) i uruchomić go ponownie (npm start).
 
 ![aboutconfig-1](gh/aboutconfig-1.png)
 
-Dodanie konfiguracji nowych stron polega na stworzeniu instancję pluginu HtmlWebpackPlugin w pliku webpack.config.pages.js. Najprostrzym sposobem jest skopiowanie istniejącej już instancji i następnie odpowiednie jej wyedytowanie.
+Dodanie konfiguracji nowych stron polega na stworzeniu instancję pluginu HtmlWebpackPlugin w pliku webpack.config.pages.js. Najprostszym sposobem jest skopiowanie istniejącej już instancji i następnie odpowiednie jej wyedytowanie.
 
 ![copyconfig](gh/copyconfig.gif)
 
@@ -154,7 +154,7 @@ Czyli podsumowując po skopiowaniu konfiguracji odpowiedzialnej za obsługę now
 
 #### 4.2.3 Utworzenie kilku plików JavaScript i użycie ich na różnych stronach
 
-W pliku webpack.config.pages.js w entry możemy dodać kilka plików wejściowych wraz ze swoimi zależnościami, na podstawie których zostaną utworzone wynikowe pliki wyjściowe.
+W pliku webpack.config.pages.js w entry możemy dodać kilka plików wejściowych wraz ze swoimi zależnościami na podstawie których zostaną utworzone wynikowe pliki wyjściowe.
 
 ![anotherjs-1](gh/anotherjs-1.png)
 
@@ -197,7 +197,7 @@ background-image: url("../images/example-2.png");
 
 #### 4.3.3 Użycie grafik w pliku JS
 
-Grafiki używane w plikach JavaScript tak samo jak grafiki dla CSS muszą być dostępne na etapie bundlingu (umieszczamy je także w katalogu src/images). Przed odwołaniem się do grafiki w pliku JavaScript należy ją zaimportować budująć ścieżkę względem pliku JavaScript w którym jej używamy a samą grafiką - jak na poniższym screenie (wychodzimy jeden katalog do góry do katalogu src, a następnie wchodzimy w katalog img i wybieramy plik).
+Grafiki używane w plikach JavaScript tak samo jak grafiki dla CSS muszą być dostępne na etapie bundlingu (umieszczamy je także w katalogu src/images). Przed odwołaniem się do grafiki w pliku JavaScript należy ją zaimportować budując ścieżkę względem pliku JavaScript w którym jej używamy a samą grafiką - jak na poniższym screenie (wychodzimy jeden katalog do góry do katalogu src, a następnie wchodzimy w katalog img i wybieramy plik).
 
 ```js
 import photo from "../images/example-2.png";
